@@ -35,6 +35,7 @@ const Home = () => {
 
   const { mutate: sendReqsMutation, isPending } = useMutation({
     mutationFn: sendFriendRequest,
+    onMutate: (userId) => setOutgoingReqIds(prev => new Set([...prev, userId])),
     onSuccess: () => queryClient.invalidateQueries(['outgoingfriendReqs'])
   })
 
@@ -144,7 +145,7 @@ const Home = () => {
                       <button
                         className={`btn w-full mt-2 ${hasReqBeenSent ? 'btn-disabled' : 'btn-primary'}`}
                         onClick={() => sendReqsMutation(user._id)}
-                        disabled={hasReqBeenSent || isPending}
+                        disabled={hasReqBeenSent}
                       >
                         {hasReqBeenSent ? (
                           <>
