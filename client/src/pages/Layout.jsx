@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar/Navbar'
 
 const Layout = ({ children, showSidebar = false }) => {
     return (
-        <div className='h-screen'>
+        <div className=' min-h-screen h-full'>
             <div className='flex'>
                 {showSidebar && <Sidebar />}
                 <div className='flex-1 flex flex-col'>

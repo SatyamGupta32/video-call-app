@@ -31,7 +31,7 @@ function App() {
   if (isLoading) return <Loader />;
 
   return (
-    <div className='h-screen' data-theme={theme}>
+    <div className='min-h-screen h-full' data-theme={theme}>
       <Routes>
         <Route path='/' element={isAuthenticated && isOnboarded ? (
           <Layout showSidebar={true}>
