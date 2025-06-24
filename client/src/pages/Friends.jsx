@@ -2,6 +2,7 @@ import React from 'react'
 import { getUserFriends } from '../lib/helper'
 import FriendCard from '../components/Cards/FriendCard'
 import { useQuery } from '@tanstack/react-query'
+import NoFriendFound from '../components/EmptyState/NoFriendFound'
 
 const Friends = () => {
 
